@@ -1,0 +1,31 @@
+PROGRAM Proses Order Makanan Via Online
+STORE "customer's name" with string
+STORE "balance" with number 
+STORE "menu" with object [
+	{
+		ID:1,
+		FoodName: "Fried Rice"
+		Price: 15000
+	},
+	{
+		ID:2,
+		FoodName: "Uduk Rice"
+		Price: 20000,
+	}
+]
+STORE "quantity" with number
+STORE "choose" with number
+STORE "total" with number
+
+WHILE choose != 0
+	IF choose == 1
+		STORE "quantity" with number
+		SET total = total + (quantity * menu[1].Price)
+	ELSE IF choose == 2
+	 	STORE "quantity" with number
+		SET total = total + (quantity * menu[2].Price)
+												
+IF balance >= total 
+	PRINT RESULT "Order is completed"
+ELSE
+	PRINT RESULT "Something wrong, your balance is not enough"
